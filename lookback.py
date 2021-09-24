@@ -253,3 +253,47 @@ mylist= [x for x in 'word']
 >>> mylist= [x for x in range(0,11) if x%2==0]
 >>> mylist
 [0, 2, 4, 6, 8, 10]
+
+
+"""
+Function
+"""
+
+#Provide a default value in the parameter
+>>> def say_hello(name="seannn"):
+...     print(f"hi daddy {name}")
+... 
+>>> say_hello()
+hi daddy seannn
+>>> say_hello(2222)
+hi daddy 2222
+
+
+#using return and not using return
+>>> def print_result(a,b):
+...     print(a+ b)
+... 
+>>> def return_results(a,b):
+...     return a+ b
+... 
+>>> print_result(10,20)
+30
+>>> result= print_result(10,20)
+30
+>>> result
+>>> 
+>>> type(result)
+<class 'NoneType'>
+>>> return_results(10,20)
+30
+>>> result= return_results(10,20)
+>>> result
+30
+
+
+>>> def myfunc(a,b):
+...     print(a+b)
+...     return a+b
+... 
+>>> result= myfunc(10,20)
+30
