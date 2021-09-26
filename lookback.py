@@ -119,14 +119,14 @@ ENUMERATE, this operation so common they have enumerate()
 """
 >>> index= 0
 >>> for f in 'abcde':
-...     print(f"At index {index} the letter is")
+...     print(f"At index {index} the letter is {f}")
 ...     index+= 1
 ...
-At index 0 the letter is
-At index 1 the letter is
-At index 2 the letter is
-At index 3 the letter is
-At index 4 the letter is	
+At index 0 the letter is a
+At index 1 the letter is b
+At index 2 the letter is c
+At index 3 the letter is d
+At index 4 the letter is e	
 
 
 #Enumerate, in the fomr of tuple
