@@ -10,7 +10,4 @@ def check_even(num):
 	return newlist			
 
 
-num= [1,2,3,4,5,6]
-
-print(check_even(num))    
 

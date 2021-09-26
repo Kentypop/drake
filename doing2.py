@@ -16,11 +16,3 @@ def employee_check(work_hours):
 
 	return (employee_of_month, current_max)		
 
-
-
-result= employee_check(work_hours)	
-print(result)
-
-#Tuple unpacking with a function call.
-name, hours= employee_check(work_hours)
-print(name, hours)

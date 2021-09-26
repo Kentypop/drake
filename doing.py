@@ -1,19 +1,26 @@
-work_hours = [('Abby',100),('Billy',400),('Cassie',800)]
+import doing2
+import doing3
+import doing4
+
+# doing2.py
+work_hours = [('Abby',100),('Billy',400),('Cassie',800), ('drake', 1)]
 
 
-def best_emp(work_hours):
-	mylist= []
+result= doing2.employee_check(work_hours)	
+print(result)
 
-	for name, hours in work_hours:
-		#Get the max 
-		mylist.append(hours)
-		max_hours= max(mylist)
-		
 
-	return max_hours
+# Tuple unpacking with a function call.
+name, hours= doing2.employee_check(work_hours)
+print(name, hours)
 
 
 
-aa= best_emp(work_hours)		
+# doing3.py
+num= [1,2,3,4,5,6]
+print(doing3.check_even(num))    
 
-print(aa)
+
+# doing4.py
+
+print(doing4.add_func(1,2))
