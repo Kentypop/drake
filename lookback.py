@@ -297,3 +297,93 @@ hi daddy 2222
 ... 
 >>> result= myfunc(10,20)
 30
+
+
+
+"""
+Positional argument
+"""
+
+#If you want to work with multiple positional argument in the sum, 
+#you have to pass them in as tuple
+>>> def myfunc(a,b):
+...     return sum((a,b))* 0.05
+... 
+>>> myfunc(40, 60)
+5.0
+
+#What if we awnt to work with more than two number?
+#One way is to assign alot of parameter
+#This is cdefault is 0, if they dont pass stuff its 0, it wont affect the sum()
+def myfunc(a,b, c=0):
+
+
+# (*args) allow you to treat this as a tuple of parameters that are coming in
+#whatevere this parameter is, user can pass in as many as want.
+#and its going to be treated as tuple in that function
+#you can loop thru it or iterate thru it or sum it together
+#by convention u u use args. as long its followed by asterisk *
+#It allow you to pass in as many argument as you want
+
+>>> def myfunc(*args):
+...     return sum(args)* 0.05
+... 
+>>> myfunc(40,60)
+5.0
+>>> myfunc(40,60,100,1000)
+60.0
+>>> 
+
+
+>>> def myfunc(*args):
+...     print(args)
+... 
+>>> myfunc(40,60,100,1000)
+(40, 60, 100, 1000)
+
+
+
+>>> def myfunc(*args):
+...     for item in args:
+...             print(item)
+... 
+>>> myfunc(40,60,100,1000)
+40
+60
+100
+1000
+
+# python offers a way to handle arbitrarily number of keyworded argument
+# **kwargs
+# *args returns tuple
+# **kwargs return a dictionary
+#USE "" so it don fuck it up when you ['']
+
+# (*args, **kwargs) when pass, has to be in order, CANNOT myfunc(1,2,3, girl='chick', boy='boi', 123)
+
+>>> def myfunc(**kwargs):
+...     if 'fruit' in kwargs:
+...             print(f'My fruit of choice is {kwargs['fruit']}')
+...     else:
+...             print('I did not find any fruit here')
+... 
+>>> myfunc(fruit='apple')
+My fruit of choice is {'fruit': 'apple'}
+
+
+
+>>> def myfunc(**kwargs):
+...     if 'fruit' in kwargs:
+...             print('My fruit of choice is {}'.format(kwargs['fruit']))
+...     else:
+...             print('I did not find any fruit here')
+... 
+>>> myfunc(fruit= 'apple')
+My fruit of choice is apple
+
+
+>>> def myfunc(**kwargs):
+...     print(kwargs)
+... 
+>>> myfunc(fruit='apple', veggie='lettuce')
+{'fruit': 'apple', 'veggie': 'lettuce'}
