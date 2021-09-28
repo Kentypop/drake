@@ -363,13 +363,12 @@ def myfunc(a,b, c=0):
 
 >>> def myfunc(**kwargs):
 ...     if 'fruit' in kwargs:
-...             print(f'My fruit of choice is {kwargs['fruit']}')
+...             print(f"My fruit of choice is {kwargs['fruit']}")
 ...     else:
 ...             print('I did not find any fruit here')
 ... 
 >>> myfunc(fruit='apple')
-My fruit of choice is {'fruit': 'apple'}
-
+My fruit of choice is apple
 
 
 >>> def myfunc(**kwargs):
@@ -387,3 +386,55 @@ My fruit of choice is apple
 ... 
 >>> myfunc(fruit='apple', veggie='lettuce')
 {'fruit': 'apple', 'veggie': 'lettuce'}
+
+
+#method chain
+
+
+>>> text[::-1].split()
+['pus', 'yas', '1relyt']
+>>> text.split()[::-1]
+['sup', 'say', 'tyler1']
+
+
+
+"""
+the use of SLICE @@@@
+"""
+
+# https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/03-Methods%20and%20Functions/04-Function%20Practice%20Exercises%20-%20Solutions.ipynb
+
+# SOLUTION
+
+def has_33(nums):
+	#@@@@ whats up with this -1?
+    for i in range(0, len(nums)-1):
+      
+        # nicer looking alternative in commented code
+        #if nums[i] == 3 and nums[i+1] == 3:
+    
+        if nums[i:i+2] == [3,3]:
+            return True  
+    
+    return False
+
+
+
+print(has_33([1, 3, 3]))
+
+
+"""
+The use of abs
+"""
+
+
+# SOLUTION
+# https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/03-Methods%20and%20Functions/04-Function%20Practice%20Exercises%20-%20Solutions.ipynb
+
+
+
+def almost_there(n):
+    return ((abs(100 - n) <= 10) or (abs(200 - n) <= 10))
+
+
+print(almost_there(80))
