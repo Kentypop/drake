@@ -1,9 +1,18 @@
 """
 Modulo or "Mod" Operator. Find the remainder usinbg %
-Check to see fi a number is EVEN or not by % ". If 0 then its even
+Check to see if a number is EVEN or not by % ". If 0 then its even
 """
 >>> 9%4
 >>> 1
+
+"""
+() in calculation
+() parenthesis prioritiize arithmetic
+"""
+>>> 2+3*2+3
+11
+>>> (2+3) * (2+3)
+25
 
 """
 String, slicing and indexing
@@ -50,6 +59,14 @@ When you called back, its sorted.
 mylist= ["koko", "ash", "yuna"]
 mylist.sort()
 
+"""
+How do I index a nested list? For example if I want to grab 2 from [1,1,[1,2]]?
+
+NESTED LIST
+"""
+>>> a= [1,1,[1,2]]
+>>> a[2][1]
+2
 
 """
 Tuple unpacking

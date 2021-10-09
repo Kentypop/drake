@@ -1,12 +1,10 @@
-def paper_doll(text):
-	added= ''
-
-	for f in text:
-		two_copy = f*3
-		added= added+two_copy
-
-
-	return added
+def summer_69(aa):
+	
+	if 6 in aa:
+		aa.remove(6)
+		total= sum((aa))
+		print(total)
+		
 
 
-print(paper_doll("Hello"))
+print(summer_69([1, 3, 6]))

@@ -30,7 +30,6 @@ print(blackjack(9,9,11))
 
 #Solution
 #it's wrong?
-#@@@@@@@@@@@@@@@@@@@@@@
 
 def blackjack(a,b,c):
     
