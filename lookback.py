@@ -60,6 +60,21 @@ mylist= ["koko", "ash", "yuna"]
 mylist.sort()
 
 """
+dictionary access
+"""
+
+>>> d= {'k1':123, 'k2': [0,1,2], 'k3':{'insidekey':100}}
+>>> d['k3']
+{'insidekey': 100}
+>>> d['k3']['insidekey']
+100
+>>> d['k2'][2]
+2
+>>> d['k2'][0]
+0
+
+
+"""
 How do I index a nested list? For example if I want to grab 2 from [1,1,[1,2]]?
 
 NESTED LIST
