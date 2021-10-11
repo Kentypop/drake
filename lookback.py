@@ -92,6 +92,32 @@ for a,b in list2:
 	print(a)
 	print(b)
 
+for (a,b) in list2:
+
+    SAME THING
+
+
+>>> d= {'k1':1, 'k2':2, 'k3':3}
+>>> for f in d.items():
+...     print(f)
+...
+('k1', 1)
+('k2', 2)
+('k3', 3)
+
+items() returns tuple. there fpore you can use tuple unpacking.
+
+>>> for key,value in d.items():
+...     print(key)
+...     print(value)
+...
+k1
+1
+k2
+2
+k3
+3
+>>>
 
 """
 Sets
