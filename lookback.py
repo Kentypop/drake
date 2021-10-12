@@ -356,7 +356,45 @@ hi daddy 2222
 >>> result= myfunc(10,20)
 30
 
+"""
+Tuple unpacking with function
+"""
 
+work_hours = [('Abby',100),('Billy',400),('Cassie',800)]
+
+
+def employee_check(work_hours):
+    
+    # Set some max value to intially beat, like zero hours
+    current_max = 0
+    # Set some empty value before the loop
+    employee_of_month = ''
+    
+    for employee,hours in work_hours:
+        if hours > current_max:
+            current_max = hours
+            employee_of_month = employee
+        else:
+            pass
+    
+    # Notice the indentation here
+    return (employee_of_month,current_max)
+
+
+
+employee_check(work_hours)    
+
+('Cassie', 800)
+#Since it return tuple, u can use the tuple unpacking to define
+
+
+name, hours= employee_check(work_hours)
+
+
+name
+'Billy'
+hours
+4000
 
 """
 Positional argument
@@ -364,6 +402,7 @@ Positional argument
 
 #If you want to work with multiple positional argument in the sum, 
 #you have to pass them in as tuple
+#@@@@@@@@@@@@@@@@@@@ ((a,b)) NECAUSE (a,b) is a tuple
 >>> def myfunc(a,b):
 ...     return sum((a,b))* 0.05
 ... 
@@ -448,6 +487,7 @@ My fruit of choice is apple
 
 #method chain
 
+>>> text= 'tyler1 say sup'
 
 >>> text[::-1].split()
 ['pus', 'yas', '1relyt']
