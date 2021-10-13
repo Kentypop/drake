@@ -1,8 +1,17 @@
 
 
-num = 14
+num = 7
 
 if num> 1:
+
+	#loops all numbers and counts withint the numbers given
+	for f in range(2,num+1):
+
+		if num%f == 0:
+			print(f"this {num} not prime number")
+		else:
+
+
 
     for f in range(2, num//2+1):
 

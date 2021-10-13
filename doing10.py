@@ -1,6 +1,6 @@
 
 
-num = 13
+num = 2
 
 if num> 1:
 
@@ -12,5 +12,6 @@ if num> 1:
             print(f"this {num} not prime number")
             break
 
-    print(f"this {num} issss prime number!!!")
+        else:
+            print(f"this {num}, {f} issss prime number!!!")
 
