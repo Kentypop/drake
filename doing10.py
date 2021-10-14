@@ -1,6 +1,6 @@
 
 
-num = 2
+num = 7
 
 if num> 1:
 

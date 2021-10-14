@@ -1,3 +1,11 @@
+# https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/03-Methods%20and%20Functions/03-Function%20Practice%20Exercises.ipynb
+
+"""
+CHALLENGING PROBLEMS
+
+PRINT BIG: Write a function that takes in a single letter, and returns a 5x5 representation of that letter
+"""
+
 
 def print_big(letter):
     patterns = {1:'  *  ',2:' * * ',3:'*   *',4:'*****',5:'**** ',6:'   * ',7:' *   ',8:'*   * ',9:'*    '}

@@ -536,3 +536,93 @@ def almost_there(n):
 
 
 print(almost_there(80))
+
+
+"""
+ for else statement
+
+ applied when BREAK is there.
+
+ means if it went thru an entire for loop, and it never break, 
+ then the else statement is going to execute.
+"""
+
+    # x is going through every number up to input num
+    while x<= num:
+        #Check if x is prime
+        for y in range(3,x,2):
+            if x%y == 0:
+                x+= 2
+                break
+        else:
+            primes.append(x)
+            x+= 2
+
+
+"""
+map()
+"""
+
+>>> def square(num):
+...     return num**2
+...
+
+>>> my_nums= [1,2,3,4,5]
+>>> for item in map(square, my_nums):
+...     print(item)
+...
+1
+4
+9
+16
+25
+
+>>> list(map(square, my_nums))
+[1, 4, 9, 16, 25]
+
+
+>>> for f in my_nums:
+...     result= f**2
+...
+>>> for f in my_nums:
+...     result= f**2
+...     print(result)
+...
+1
+4
+9
+16
+25
+
+>>> def splicer(mystring):
+...     if len(mystring)%2 == 0:
+...             return 'EVEN'
+...     else:
+...             return mystring[0]
+...
+>>> names= ['Andy', 'Eve', 'Sally']
+>>> list(map(splicer, names))
+['EVEN', 'E', 'S']
+>>>
+
+
+"""
+filter()
+"""
+
+
+>>> def check_even(num):
+...     return num%2 == 0
+...
+>>> mynums= [1,2,3,4,5,6]
+
+
+>>> list(filter(check_even,mynums))
+[2, 4, 6]
+
+>>> for f in filter(check_even, mynums):
+...     print(f)
+...
+2
+4
+6
