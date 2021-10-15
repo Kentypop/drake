@@ -561,6 +561,8 @@ print(almost_there(80))
 
 """
 map()
+map() function returns a map object(which is an iterator) of the results after applying 
+the given function to each item of a given iterable (list, tuple etc.)
 """
 
 >>> def square(num):
@@ -626,3 +628,62 @@ filter()
 2
 4
 6
+
+"""
+lambda
+"""
+
+
+
+
+"""
+Nested statement and scope
+"""
+    #GLOBAL
+>>> name= 'This is a global string'
+
+>>> def greet():
+        #ENCLOSING
+...     name= 'Sammy'
+...     def hello():
+...             print('Hello' + name)
+...     hello()
+...
+>>> greet()
+HelloSammy
+
+
+>>> def greet():
+        #ENCLOSING
+...     #name= 'Sammy'
+...     def hello():
+...             print('Hello' + name)
+...     hello()
+...
+>>> greet()
+HelloThis is a global string
+
+
+
+>>> def greet():
+        #ENCLOSING
+...     name= 'Sammy'
+...     def hello():
+...             #LOCAL
+...             name= 'IM A LOCAL'
+...             print('Hello'+ name)
+...     hello()
+...
+>>> greet()
+HelloIM A LOCAL
+
+
+>>> x= 50
+>>> def func():
+...     global x
+...     print(f'X is {x}')
+...     #LOCAL REASSIGMENT
+...     x= 200
+...     print(f'I JUST GLOBALLY CHANGED X TO {x}')
+X is 50
+I JUST GLOBALLY CHANGED X TO 200
