@@ -29,6 +29,4 @@ def count_primes(num):
 	return len(primes)
 
 
-print(count_primes(7))
-
-
+print(count_primes(14))
