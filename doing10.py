@@ -1,27 +1,22 @@
-def up_low(s):
-    list_up= []
-    list_low= []
+import pdb
 
 
-    for f in s.split():
-    	if f[0].isupper() == True:
-    		list_up.append(f)
+def multiply(numbers):  
 
-    	elif f.islower() == True:
-    		list_low.append(f)
-    		joined= ''.join(f)
-    
-    ups= len(list_up)		
-    lows= len(joined)
+	total= 1
 
-    print(f"we got {ups} and {lows}")
+	for f in numbers:
 
-    return ups, lows
+		pdb.set_trace()
+		
+		result= f * total
 
 
-up_low('Hello Mr. Rogers, how are you this fine Tuesday?')
+	return print(result)
+		
 
 
 
 
 
+multiply([1, 2, 3, -4])
