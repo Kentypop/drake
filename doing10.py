@@ -1,31 +1,66 @@
-def user_choice():
+def display_game(game_list):
+	print("Here is the current list")
+	print(game_list)
 
-	#VARIABLES
 
-	#Initial
-	choice= "WRONG"
-	acceptable_range= range(0,10)
-	within_range= False
 
-	#TW CONDITIONTO CHECK
-	#DIGIT OR WITHIN_RANGE== False
-	while choice.isdigit() == False or within_range == False:
+def position_choice():
 
-		choice= input("Please enter a number (0-10): ")
+	choice= 'wrong'
 
-		#DIGIT CHECK
-		if choice.isdigit() == False:
-			print("sry thast not a digit")
+	while choice not in ['0','1', '2']:
 
-		#RANGE CHECK
-		if choice.isdigit() == True:
-			if int(choice) in acceptable_range:
-				within_range= True
-			else:
-				print("ur outta 0-10")
-				within_range= False	
+		choice= input("put a position 0,1,2")
+
+		if choice not in ['0','1', '2']:
+			print("sorry,invalid choice:  ")
 
 	return int(choice)
 
 
-user_choice()
+
+def replacement_choice(game_list, position):
+
+	user_placement= input("type a string to place at position")
+
+	game_list[position]= user_placement
+
+	return game_list
+
+
+
+def gameon_choice():
+
+	choice= 'wrong'
+
+	while choice not in ['Y', 'N']:
+
+		choice= input("keep playing? (Y or N) ")
+
+		if choice not in ['Y', 'N']:
+			print("sorry,i dont understand. please choose Y or N  ")
+
+	if choice == "Y":
+		return True
+	else:
+		return False
+
+	return int(choice)
+
+
+game_on= True
+game_list= [0,1,2]
+
+# while game_on == True:
+while game_on:
+
+	display_game(game_list)
+
+	position= position_choice()
+
+	game_list= replacement_choice(game_list, position)
+
+	display_game(game_list)
+
+	game_on= gameon_choice()
+
