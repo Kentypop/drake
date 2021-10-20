@@ -1,32 +1,22 @@
-def count_primes(num):
+def player_input():
 
-	#Check for 0 or 1 input
-	if num< 2:
-		return 0
+	"""
+	OUTPUT= (Player 1 marker, Payer 2 marker)
+	"""
 
-	#########
-	# 2 or greater
-	#########
+	marker= ''
 
-	#Store prime numbers
-	primes= [2]
+	while marker != 'X' and marker != 'O':
+		marker= input('Player1: choose: X or O').upper()
 
-	#Counter going yp to input num
-	x= 3
+	if marker == 'X':
 
-	# x is going through every number up to input num
-	while x<= num:
-		#Check if x is prime
-		for y in range(3,x,2):
-			if x%y == 0:
-				x+= 2
-				break
-		else:
-			primes.append(x)
-			x+= 2
-
-	print(primes)
-	return len(primes)
+		return ('X', 'O')
+	else:
+		return('O', 'X')
 
 
-print(count_primes(14))
+player1, player2= player_input()
+
+print(player1)
+print(player2)

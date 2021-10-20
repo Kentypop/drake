@@ -723,3 +723,53 @@ def user_choice():
 
 
 user_choice()
+
+
+"""
+tic tac toe
+
+https://www.udemy.com/course/complete-python-bootcamp/learn/lecture/9442472#content
+
+"""
+
+
+# smart way to check if full board
+
+def space_check(board, position):
+
+    return board[position] == ''
+
+
+
+def full_board_check(board):
+
+    for i in range(1,10):
+        #this part man
+        if space_check(board, i):
+            return False
+
+    #BOARD IS  FULL IF WE RETURN True
+    return True
+
+
+test_board = ['#','X','','','X','','','X','','']
+
+full_board_check(test_board)
+
+
+# ways of conditional of tic tc toe
+
+def win_check(board, mark):
+    
+    #these two are the same logic
+    (board[1] == mark and board[2] == mark and board[3] == mark) or
+    (board[4] == board[5] == board[6] == mark)
+
+
+
+# this bit is nice
+def replay():
+
+    choice= input("Play again? Enter Yes or No")
+
+    return choice == 'Yes'

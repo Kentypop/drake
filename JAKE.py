@@ -110,3 +110,26 @@ def count_primes(num):
 
 print(count_primes(7))
 
+
+##### else statement
+
+def player_input():
+
+	"""
+	OUTPUT= (Player 1 marker, Payer 2 marker)
+	"""
+
+	marker= ''
+
+	while marker != 'X' and marker != 'O':
+		marker= input('Player1: choose: X or O').upper()
+
+	if marker == 'X':
+
+		return ('X', 'O')
+	#why does this get trigger only when marker == O ?? is it because of the while statement above?
+	else:
+		return('O', 'X')
+
+
+print(player_input())
