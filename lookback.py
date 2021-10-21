@@ -773,3 +773,123 @@ def replay():
     choice= input("Play again? Enter Yes or No")
 
     return choice == 'Yes'
+
+
+"""
+class
+"""
+
+class Dog():
+    
+    #CLASS OBJECT ATTRIBUTE
+    #SAME FOR ANY INSTANCE OF A CLASS
+    #Dont need SELF because SELF is a reference for this particular instance of a class
+    species= 'mammal'
+
+    def __init__(self, breed, name):
+
+        #Attributes
+        self.breed= breed
+        self.name= name
+
+    #OPERATIONS/Actions ---> Methods
+    def bark(self, number):
+        print(f"WOOF! My name is {self.name} and the number is {number}")
+
+
+
+
+my_dog= Dog('Lab', 'Frankie')
+
+print(my_dog.breed, my_dog.name)
+print(my_dog.species)
+
+my_dog.bark(1111)
+
+
+
+#another class
+
+class Circle():
+
+    #CLASS OBJECT ATTRIBUTE
+    pi= 3.14
+
+    def __init__(self, radius=1):
+
+        self.radius= radius
+        # https://www.udemy.com/course/complete-python-bootcamp/learn/lecture/9478294?start=450#content
+        #if u hvae atribue it doesnt have to be defined from particular parameter call
+        #15:00
+        #CLASS OBJECT ATTRIBUTE, you can call by self.pi, Circle.pi  @@@@@@
+        self.area= radius*radius*self.pi
+
+    #METHOD
+    def get_circumference(self):
+        #self.pi, Circle.pi  @@@@@@
+        return self.radius * self.pi * 2
+
+
+my_circle= Circle(30)
+
+print(my_circle.pi)
+print(my_circle.radius)
+print(my_circle.area)
+
+print(my_circle.get_circumference())
+
+
+
+#another class
+
+class Girl():
+
+    h= 222222
+
+    def __init__(self, name):
+
+        self.name= name
+
+        self.age= Girl.h
+
+
+girls= Girl("koko")
+print(girls.age)
+
+
+"""
+INHERITANCE
+"""
+
+class Animal():
+
+    def __init__(self):
+        print("Animal created")
+
+    def who_am_i(self):
+        print("I am an animal")
+
+    def eat(self):
+        print("I'm eating")
+
+
+
+class Dog(Animal):
+
+    def __init__(self):
+        Animal.__init__(self)
+        print("Dog created")
+
+    #OVERRIDE
+    def who_am_i(self):
+        print("im a dGOGGG")
+
+    #add on methods
+    def bark(self):
+        print("WOOF!!")
+
+
+
+mydog= Dog()
+
+mydog.bark()

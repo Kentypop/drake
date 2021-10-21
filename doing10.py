@@ -1,27 +1,32 @@
-class Dog():
-	
-	#CLASS OBJECT ATTRIBUTE
-	#SAME FOR ANY INSTANCE OF A CLASS
-	#Dont need SELF because SELF is a reference for this particular instance of a class
-	species= 'mammal'
+class Animal():
 
-	def __init__(self, breed, name):
+	def __init__(self):
+		print("Animal created")
 
-		#Attributes
-		self.breed= breed
-		self.name= name
+	def who_am_i(self):
+		print("I am an animal")
 
-	#OPERATIONS/Actions ---> Methods
+	def eat(self):
+		print("I'm eating")
+
+
+
+class Dog(Animal):
+
+	def __init__(self):
+		Animal.__init__(self)
+		print("Dog created")
+
+	#OVERRIDE
+	def who_am_i(self):
+		print("im a dGOGGG")
+
+	#add on methods
 	def bark(self):
-		print("WOOF!")
+		print("WOOF!!")
 
 
 
-my_dog= Dog('Lab', 'Frankie')
+mydog= Dog()
 
-
-print(type(my_dog))
-print(my_dog.breed, my_dog.name)
-print(my_dog.species)
-
-my_dog.bark()
+mydog.bark()

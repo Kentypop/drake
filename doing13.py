@@ -1,22 +1,22 @@
-def player_input():
+class User():
 
-	"""
-	OUTPUT= (Player 1 marker, Payer 2 marker)
-	"""
+	def __init__(self, first_name, last_name, age, looks):
 
-	marker= ''
-
-	while marker != 'X' and marker != 'O':
-		marker= input('Player1: choose: X or O').upper()
-
-	if marker == 'X':
-
-		return ('X', 'O')
-	else:
-		return('O', 'X')
+		self.first_name= first_name
+		self.last_name= last_name
+		self.age= age
+		self.looks= looks
 
 
-player1, player2= player_input()
+	def describe_user(self):
+		print(f"he's {self.age} and pretty {self.looks}")
 
-print(player1)
-print(player2)
+	def greet_user(self):
+		print(f"hey {self.first_name}, ur last name {self.last_name} , ur {self.age}")
+
+
+
+user1= User("sean", "takei", 22, "handsomeee")
+
+user1.describe_user()
+user1.greet_user()
