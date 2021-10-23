@@ -893,3 +893,119 @@ class Dog(Animal):
 mydog= Dog()
 
 mydog.bark()
+
+
+"""
+Polymorph
+"""
+
+class Dog:
+
+    def __init__(self, name):
+        self.name= name
+
+    def speak(self):
+        return self.name + "says woof!"
+
+
+
+class Cat():
+
+    def __init__(self, name):
+        self.name= name
+
+    def speak(self):
+        return self.name + "says meow!"
+
+
+
+niko= Dog("niko")
+felix= Cat("felix")
+
+print(niko.speak())
+print(felix.speak())
+print("@@@@@@@@@")
+
+
+for pet in [niko, felix]:
+
+    print(type(pet))
+    print(type(pet.speak()))
+
+
+"""
+Abstract class
+"""
+
+#Abstract class, not expected to create instance with it,
+#The reason its abstract class is the method dont do anyting, it expect you to override it.
+
+
+class Animal():
+
+    def __init__(self, name):
+        self.name= name
+
+    def speak(self):
+        raise NotImplementedError("Subclass must implement this abstract method")
+
+
+
+myanimal= Animal('fred')
+
+#myanimal.speak()
+
+class Dog(Animal):
+
+    def speak(self):
+        return self.name + "says meow!"
+
+
+fido= Dog("Fido")
+print(fido.speak())
+
+
+"""
+Special methods, magic, dunder
+"""
+
+class Sample():
+    pass
+
+
+
+mysample= Sample()
+
+print(mysample)
+
+
+
+class Book():
+
+    def __init__(self, title, author, pages):
+
+        self.title= title
+        self.author= author
+        self.pages= pages
+
+    def __str__(self):
+        return f"{self.title} by {self.author}"
+
+    def __len__(self):
+        return self.pages
+
+    def __del__(self):
+        print("A book object has been deleted@@@@@")
+        
+
+
+b= Book("python book", "Jose", 20)
+print(b.__len__())
+
+print(b)
+
+print(len(b))
+
+del b
+print(b)
+

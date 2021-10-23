@@ -1,32 +1,113 @@
-class Animal():
+#CARD
+import random 
+
+
+
+suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
+
+ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
+
+values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 
+            'Nine':9, 'Ten':10, 'Jack':11, 'Queen':12, 'King':13, 'Ace':14}
+
+
+
+class Card():
+
+	def __init__(self, suit, rank):
+		self.suit= suit
+		self.rank= rank
+		self.value= values[rank]
+
+	def __str__(self):
+		return self.rank + " of " + self.suit
+
+
+
+
+two_heart= Card("Hearts", "Two")
+
+three_of_clubs= Card("Clubs", "Three")
+
+print(three_of_clubs.value)
+print(two_heart.value < three_of_clubs.value)
+
+print("@@@@@@@@@@@@@@@@@@@@@@")
+
+
+
+class Deck():
 
 	def __init__(self):
-		print("Animal created")
 
-	def who_am_i(self):
-		print("I am an animal")
+		self.all_cards= []
 
-	def eat(self):
-		print("I'm eating")
+		for suit in suits:
+			for rank in ranks:
+				#Create the card object
+				created_card= Card(suit, rank)
+				print(created_card)
+
+				#why self here? Cuz its not being passed as parameter
+				# https://www.udemy.com/course/complete-python-bootcamp/learn/lecture/20662940#content
+				# check above at 6:10
+				self.all_cards.append(created_card)
 
 
+	def shuffle(self): 
 
-class Dog(Animal):
+		random.shuffle(self.all_cards)
 
-	def __init__(self):
-		Animal.__init__(self)
-		print("Dog created")
-
-	#OVERRIDE
-	def who_am_i(self):
-		print("im a dGOGGG")
-
-	#add on methods
-	def bark(self):
-		print("WOOF!!")
+	def deal_one(self):
+		return self.all_cards.pop()
 
 
 
-mydog= Dog()
+new_deck= Deck()
 
-mydog.bark()
+first_card= new_deck.all_cards[0]
+bottom_card= card= new_deck.all_cards[-1]
+
+
+
+print(first_card)
+print(bottom_card)
+
+for card_object in new_deck.all_cards:
+	print(card_object)
+
+print("@@@@@@@@@@@@@@@@@@@@@@@@")
+
+print(bottom_card)
+new_deck.shuffle()
+
+
+print(new_deck.all_cards[-1])
+
+print("@@@@@@@@@@@@@@@@@@@@@@@@")
+mycard= new_deck.deal_one()
+
+print(mycard)
+
+print(len(new_deck.all_cards))
+
+
+class Player():
+
+
+	def __init__(self, name):
+
+		self.name= name
+		self.all_cards= []
+
+
+	def remove_one(self):
+		pass
+
+
+	def add_cards(self, new_cards):
+		pass
+
+
+	def __str__(self):
+		return f"Player {self.name} has {len(self.all_cards)} cards"

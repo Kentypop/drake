@@ -1,25 +1,15 @@
-class Dog:
+suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
 
-	def __init__(self, name):
-		self.name= name
+ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
 
-	def speak(self):
-		return self.name + "says woof!"
+ll= []
 
 
-
-class Cat():
-
-	def __init__(self, name):
-		self.name= name
-
-	def speak(self):
-		return self.name + "says meow!"
+for suit in suits:
+	print(suit)
+	for rank in ranks:
+		print(rank)
+		ll.append(rank)
 
 
-
-niko= Dog("niko")
-felix= Cat("felix")
-
-print(niko.speak())
-print(felix.speak())
+print(ll)
