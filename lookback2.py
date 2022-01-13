@@ -455,3 +455,185 @@ While any non-zero value is treated as true, None and 0 are interpreted as false
 python truthiness
 link: 10:00    95. soolution to milesotne p
 https://www.udemy.com/course/complete-python-bootcamp/learn/lecture/9497654#notes
+
+
+
+""""
+in stead of
+
+for f in ***:
+	print(f)
+
+USE OF ASTERISK
+"""
+>>> a= [1,2,3,4,5]
+>>> print("hey", *a)
+hey 1 2 3 4 5
+>>> print("hey", *a, sep= "\n")
+hey
+1
+2
+3
+4
+5
+
+
+"""
+Decorator
+"""
+
+def hello(name='Jose'):
+	print("The hello() function has been executed!")
+
+	def greet():
+		return '\tThis is the greet() func inside hello!'
+
+	def welcome():
+		return '\tThis is welcome() inside hello'
+
+	print("I'm going to reutn a function!")
+
+	if name == 'Jose':
+		return greet
+	else:
+		return welcome
+
+
+
+my_new_func= hello('Jose')
+
+print(my_new_func())
+
+
+#We could reutnr functon and then execute them 
+#when we assign them to a new variable name
+def cool():
+
+	def super_cool():
+		return 'I am very cool!'
+
+	return super_cool
+
+
+some_func = cool()
+
+print(some_func())
+
+
+
+#This is known as passing a function as an argument
+#How to pass in function into another function
+def hello():
+	return 'Hi Jose!'
+
+
+def other(some_def_func):
+	print("Other code runs here!")
+	print(some_def_func())
+
+
+print(hello)
+print(hello())
+print(other(hello))
+
+##some more stuff
+def new_decorator(original_func):
+
+	def wrap_func():
+
+		print("Some extra code, before the original function")
+
+		original_func()
+
+		print("Some extra code, after the original function!")
+
+	return wrap_func
+
+
+def func_needs_decorator():
+	print("I want to be decorated!!")
+
+
+decorated_func= new_decorator(func_needs_decorator)
+decorated_func()
+
+print("\n@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+
+@new_decorator
+def func_needs_decorator():
+	print("I want to be decorated!!")
+
+func_needs_decorator()
+
+
+
+"""
+yield, generator
+you hvae to iterate thru it
+"""
+
+#without
+def create_cubes(n):
+	result= []
+	for x in range(n):
+		result.append(x**3)
+	return result
+
+
+for x in create_cubes(10):
+	print(x)
+
+
+print(create_cubes(10))
+
+#with generator
+def create_cubes(n):
+
+	for x in range(n):
+		yield x**3
+
+
+for x in create_cubes(10):
+	print(x)
+
+
+
+#next function
+def simple_gen():
+	for x in range(3):
+		yield x
+
+
+for f in simple_gen():
+	print(f)
+
+print("@@@@@@@@")
+
+
+
+g= simple_gen()
+
+print(g)
+print(next(g))
+print(next(g))
+
+
+#iter function
+>>> s= "hello"
+>>> for letter in s:
+...     print(letter)
+...
+h
+e
+l
+l
+o
+>>> next(s)
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'str' object is not an iterator
+>>> s_iter= iter(s)
+>>> next(s_iter)
+'h'
+>>> next(s_iter)
+'e'
