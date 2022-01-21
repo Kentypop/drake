@@ -559,6 +559,14 @@ print(almost_there(80))
             x+= 2
 
 
+
+"""
+Lambda
+"""
+
+
+
+
 """
 map()
 map() function returns a map object(which is an iterator) of the results after applying 

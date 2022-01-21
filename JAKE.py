@@ -1,3 +1,34 @@
+def blackjack(a,b,c):
+    
+    if a+b+c <= 21:
+        return a+b+c
+
+    elif sum[a,b,c] > 21 and 11 in [a,b,c]:
+        return a+b+c -10
+
+    elif a+b+c > 21:
+        return "BUST"
+
+    else:
+        print("hmmmm?????")
+
+
+print(blackjack(5,10,11))
+
+##solution 
+
+def blackjack(a,b,c):
+    
+    if sum((a,b,c)) <= 21:
+        return sum((a,b,c))
+    elif sum((a,b,c)) <=31 and 11 in (a,b,c):
+        return sum((a,b,c)) - 10
+    else:
+        return 'BUST'
+
+#WHY 31?? use of if elif else
+
+
 # https://github.com/Pierian-Data/Complete-Python-3-Bootcamp/blob/master/03-Methods%20and%20Functions/03-Function%20Practice%20Exercises.ipynb
 
 """
@@ -36,6 +67,7 @@ def summer_69(arr):
                 break
             else:
                 add = False
+        ##while not add, at this point add= False, therefore while not add  is while not False == True?
         while not add:
             if num != 9:
                 break

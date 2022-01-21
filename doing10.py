@@ -1,12 +1,24 @@
-from collections import Counter
+work_hours = [('Abby',100),('Billy',800),('Cassie',400)]
 
-mylist= "aaabbccccc"
 
-c= Counter(mylist)
+def emp_month(aa):
 
-print(c)
-print(type(c))
+	maxine= 0
+	best= ''
 
-print(list(c))
+	for emp, hours in aa:
+		#add maxine if max
+		if hours > maxine:
+			maxine= hours
+			best= emp
 
-print(type(list(c)))
+	return maxine, best
+
+
+
+
+print(emp_month(work_hours))
+
+onee, twoo= emp_month(work_hours)
+print(onee)
+print(twoo)
