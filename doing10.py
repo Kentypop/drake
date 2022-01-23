@@ -1,24 +1,10 @@
-work_hours = [('Abby',100),('Billy',800),('Cassie',400)]
-
-
-def emp_month(aa):
-
-	maxine= 0
-	best= ''
-
-	for emp, hours in aa:
-		#add maxine if max
-		if hours > maxine:
-			maxine= hours
-			best= emp
-
-	return maxine, best
-
-
-
-
-print(emp_month(work_hours))
-
-onee, twoo= emp_month(work_hours)
-print(onee)
-print(twoo)
+def has_33(nums):
+    for i in range(0, len(nums)-1):
+      
+        # nicer looking alternative in commented code
+        #if nums[i] == 3 and nums[i+1] == 3:
+    
+        if nums[i:i+2] == [3,3]:
+            return True  
+    
+    return False
