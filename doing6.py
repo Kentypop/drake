@@ -1,11 +1,43 @@
-def player_guess():
+import random
 
-	guess= ''
+suits = ('Hearts', 'Diamonds', 'Spades', 'Clubs')
 
-	while guess not in ['0', '1', '2']:
-		guess= input("Pick a number: 0,1 or 2 ")
+ranks = ('Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King', 'Ace')
 
-	return int(guess)
+values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 
+            'Nine':9, 'Ten':10, 'Jack':11, 'Queen':12, 'King':13, 'Ace':14}
 
 
-player_guess()
+
+class Card:
+
+	def __init__(self, suit, rank):
+		self.suit= suit
+		self.rank= rank
+		self.value= values[rank]
+
+	def __str__(self):
+		return self.rank + " of " + self.suit
+
+
+
+class Deck:
+
+	def __init__(self):
+
+		self.all_cards= []
+
+		for suit in suits:
+			for rank in ranks:
+				#Create the card objects
+				created_card= Card(suits,rank)
+
+				self.all_cards.append(created_card)
+
+
+
+
+
+dd= Deck()
+
+print(dd.all_cards[0])

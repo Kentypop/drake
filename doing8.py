@@ -1,39 +1,21 @@
-from random import shuffle
-
-
-def shuffle_list(mylist):
-	shuffle(mylist)
-
-	return mylist
-
-
-def player_guess():
-
-	guess= ''
-
-	while guess not in ['0', '1', '2']:
-		guess= input("Pick a number: 0,1 or 2 ")
-
-	return int(guess)
-
-
-def check_guest(mylist, guess):
-	if mylist[guess] == 'O':
-		print("Correct!")
-	else:
-		print("Wrong guess!")	
-		print(mylist)	
+values = {'Two':2, 'Three':3, 'Four':4, 'Five':5, 'Six':6, 'Seven':7, 'Eight':8, 
+            'Nine':9, 'Ten':10, 'Jack':11, 'Queen':12, 'King':13, 'Ace':14}
 
 
 
-# INITIAL LIST
-mylist= ['', 'O', '']
+class Card:
 
-# SHUFFLE LIST
-mixedup_list= shuffle_list(mylist)
+	def __init__(self, suit, rank):
+		self.suit= suit
+		self.rank= rank
+		self.value= values[rank]
 
-# USER GUESS
-guess= player_guess()
+	def __str__(self):
+		return self.suit + " of " + self.rank
 
-# CHECK GUESS
-check_guest(mixedup_list, guess)
+
+
+two_hearts= Card("hearts", "Two")
+
+
+print(two_hearts.value)

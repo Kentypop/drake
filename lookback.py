@@ -640,7 +640,32 @@ filter()
 """
 lambda
 """
+def square(num): return num**2
 
+
+print(square(2))
+print("@@@@@@@@")
+
+
+square= lambda num: num**2
+
+print(square(5))
+print("@@@@@@@@")
+
+
+mynums= [1,2,3,4,5]
+
+print( list(map(lambda num: num**2, mynums)) )
+
+
+print( list(filter(lambda num: num%2 == 0, mynums)) )
+
+print("@@@@@@@@")
+
+
+names= ['Andy', 'Eve', 'Sally']
+
+print(  list(map(lambda x:x[0], names)) )
 
 
 
@@ -901,6 +926,26 @@ class Dog(Animal):
 mydog= Dog()
 
 mydog.bark()
+
+
+
+
+class Vehicle():
+
+    def __init__(self, max_speed, mileage):
+
+        self.max_speed= max_speed
+        self.mileage= mileage
+
+
+
+class Bus(Vehicle):
+    def __init__(self, max_speed, mileage):
+        Vehicle.__init__(self, max_speed, mileage)
+
+
+
+bbb= Bus(9, 1100001)
 
 
 """
