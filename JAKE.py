@@ -139,3 +139,18 @@ def player_input():
 
 
 print(player_input())
+
+
+
+
+#isnt this likie, redundant??? s is beind defined twice.
+
+s = 'hello'
+
+#code here
+s= iter(s)
+
+print(next(s))
+print(next(s))
+
+

@@ -1,45 +1,22 @@
-class Account:
-    
-    def __init__(self, owner, balance):
-    	self.owner= owner
-    	self.balance= balance
+def hello(name="Jose"):
+	print("the hello() function has been executed!")
 
-    def __str__(self):
-    	return f"Account ownver: {self.owner} \nAccount balance: {self.balance}"
+	def greet():
+		return '\t This is the greet() func inside hello!'
 
-    def deposit(self):
+	def welcome():
+		return '\t This is welcome() inside hello'
 
-    	#get input
-    	amount= int(input("how much u wanna deposit?"))
+	print("Im going to return a function!")
 
-    	self.balance+= amount
-    	print(f"Your total balance is {self.balance}")
-
-    	return self.balance
-
-    def withdraw(self):
-
-    	amount= int(input("how much u wanna withdraw?"))
-
-    	if amount > self.balance:
-    		print(f"sry ur withraw {amount} exceeds {self.balance} balance")
-    	else:
-    		self.balance-= amount
-    		print(f"your balacne ios now {self.balance}")
-
-    	return self.balance
+	if name == 'Jose':
+		return greet
+	else:
+		return welcome
 
 
 
+my_new_func= hello('Jose')
 
-
-
-
-# 1. Instantiate the class
-acct1 = Account('Jose',100)
-# 2. Print the object
-print(acct1)
-
-acct1.withdraw()
-
-print(acct1)
+print(my_new_func)
+print(my_new_func())

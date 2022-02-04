@@ -637,3 +637,5 @@ TypeError: 'str' object is not an iterator
 'h'
 >>> next(s_iter)
 'e'
+
+
