@@ -1,14 +1,12 @@
-def simple_gen():
-	for x in range(3):
-		yield x
+import re
 
 
-for number in simple_gen():
-	print(number)
+text= "My phone number is 408-555-1234"
 
+#phone= re.search("408-555-1234", text)
 
-g= simple_gen()
+phone= re.search(r"\d{3}-\d{3}-\d{4}", text)
 
-print(next(g))
-print(next(g))
-print(next(g))
+print(phone)
+
+print(phone.group())
