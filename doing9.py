@@ -1,8 +1,15 @@
-def create_cubes(n):
+import requests
 
-	for x in range(n):
-		yield x**3
+import bs4
 
+result= requests.get("https://example.com/")
 
-for x in create_cubes(10):
-	print(x)
+print(dir(result))
+
+print(result.text)
+
+soup= bs4.BeautifulSoup(result.text, "lxml")
+
+print("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@")
+
+print(soup.select("p")[0].getText())
